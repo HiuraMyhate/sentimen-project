@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Studi Kasus 3 - Analisis Sentimen</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-header">
+  <h1>Studi Kasus 3 - Analisis Sentimen E-Commerce</h1>
+</header>
+
+<nav class="navbar">
+  <a href="#" onclick="showSection('home', this)">Beranda (Simulasi)</a>
+  <a href="#" onclick="showSection('alur', this)">Alur Kerja Sistem</a>
+  <a href="#" onclick="showSection('flowchart', this)">Flowchart Proses</a>
+</nav>
+
+<section id="home" class="section active">
+  <h2>Analisis Sentimen</h2>
+
+  <div class="input-box">
+    <label>Masukkan Review Produk</label>
+    <textarea id="review" placeholder="Contoh: Produk ini sangat bagus dan pengirimannya cepat..."></textarea>
+  </div>
+
+  <button id="btnAnalisis">Analisis Sentimen</button>
+
+  <div id="popup" class="popup-overlay">
+    <div class="popup-glass">
+      <h3>Hasil Klasifikasi</h3>
+      <div class="hasil-bingkai">
+        <p id="popupText"></p>
+        </div>
+      <button onclick="tutupPopup()">Kembali</button>
+    </div>
+  </div>
+</section>
+
+<section id="alur" class="section">
+  <h2>Alur Kerja Sistem</h2>
+
+  <p>
+    Sistem Klasifikasi Sentimen ini dirancang untuk menganalisis opini pengguna terhadap produk E-Commerce 
+    berdasarkan teks review yang dimasukkan. Proses kerja sistem dilakukan secara bertahap dan sistematis agar 
+    menghasilkan klasifikasi sentimen yang akurat.
+  </p>
+
+  <h3>Penjelasan Tahapan Alur:</h3>
+
+  <ol>
+    <li>
+      <strong>Input Review</strong><br>
+      Pengguna memasukkan teks berupa ulasan atau pendapat terhadap suatu produk melalui kolom input yang tersedia.
+      Teks ini menjadi data utama yang akan diproses oleh sistem.
+    </li>
+    <br>
+    <li>
+      <strong>Preprocessing Teks</strong><br>
+      Sistem mengubah seluruh teks menjadi huruf kecil (lowercase) agar pencocokan kata dapat dilakukan secara konsisten dan menghindari kesalahan akibat perbedaan kapital.
+    </li>
+    <br>
+    <li>
+      <strong>Analisis dan Pencocokan Kata</strong><br>
+      Teks yang telah diproses kemudian dibandingkan dengan daftar kata kunci positif dan negatif yang telah ditentukan sebelumnya.  
+      - Jika ditemukan kata positif, maka sentimen diklasifikasikan sebagai <b>Positif</b>.  
+      - Jika ditemukan kata negatif, maka sentimen diklasifikasikan sebagai <b>Negatif</b>.  
+      - Jika tidak ditemukan keduanya, maka hasilnya dianggap <b>Netral</b>.
+    </li>
+    <br>
+    <li>
+      <strong>Penentuan Hasil</strong><br>
+      Berdasarkan proses analisis tersebut, sistem menghasilkan keputusan akhir berupa sentimen yang mewakili opini pengguna terhadap produk.
+    </li>
+    <br>
+    <li>
+      <strong>Output ke Pengguna</strong><br>
+      Hasil klasifikasi ditampilkan dalam bentuk popup dengan efek glass modern, sehingga pengguna dapat melihat hasilnya dengan jelas dan dapat kembali untuk memasukkan review baru.
+    </li>
+  </ol>
+
+</section>
+
+<section id="flowchart" class="section">
+  <h2>Flowchart Proses</h2>
+  <div class="flow-box">
+    <div class="flow-item">Input Review</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-item">Preprocessing Teks</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-item">Analisis Kata</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-item">Penentuan Sentimen</div>
+    <div class="flow-arrow">⬇</div>
+    <div class="flow-item">Tampilkan Hasil</div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
